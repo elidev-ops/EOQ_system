@@ -1,0 +1,25 @@
+.r0-message {
+  --box-shadow-color-ness-border: transparent;
+  padding: 1em;
+  text-align: center;
+  font-family: var(--font-press-start-2p);
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 
+    0 4px var(--box-shadow-color-ness-border),
+    0 -4px var(--box-shadow-color-ness-border),
+    4px 0 var(--box-shadow-color-ness-border),
+    -4px 0 var(--box-shadow-color-ness-border);
+}
+
+.warning {
+  --box-shadow-color-ness-border: var(--color-background-warning);
+  color: var(--color-text-default);
+  background-color: var(--color-background-warning);
+}
+
+.success {
+  --box-shadow-color-ness-border: var(--color-background-success);
+  background-color: var(--color-background-success);
+  color: var(--color-text-white);
+}

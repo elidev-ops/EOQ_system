@@ -1,0 +1,23 @@
+body {
+  background-color: var(--color-background-default);
+}
+
+a {
+  color: var(--color-text-link-primary);
+  font-family: var(--font-press-start-2p);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--color-text-link-primary-highlight);
+  text-decoration: underline;
+}
+
+.r0-center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

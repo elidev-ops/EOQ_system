@@ -1,0 +1,13 @@
+.dashboard {
+  background-color: var(--color-background-default);
+  display: grid;
+  grid-template-columns: 64px 1fr 300px;
+  grid-template-rows: 64px auto 32px;
+  grid-template-areas: 
+    'sidebar header header'
+    'sidebar main info'
+    'sidebar footer footer';
+  font-family: var(--font-press-start-2p);
+  padding: 0.5em;
+  gap: 14px;
+}

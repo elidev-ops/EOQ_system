@@ -1,0 +1,50 @@
+.r0-login-section {
+  --nes-border-box: var(--color-background-lighten);
+  --nes-border-box-size: 6px;
+  --nes-border-box-size-minus: -6px;
+
+  background-color: var(--color-background-lighten);
+  width: 100%;
+  max-width: 650px;
+  padding: 3em;
+}
+
+.r0-login-section h2 {
+  font-family: var(--font-press-start-2p);
+  margin-bottom: 1em;
+}
+
+.r0-login .nes-border  {
+  --color-pixel: var(--color-background-lighten);
+  --border-color: var(--color-background-darker);
+}
+
+.r0-login_input-box {
+  padding: 12px;
+}
+
+.r0-login_input-box div {
+  display: flex;
+  align-items: center;
+}
+
+.r0-login_input-box:not(:first-of-type) {
+  margin-top: 1em;
+}
+
+.r0-login_input-box input {
+  width: 100%;
+  border: 0;
+  background: none;
+  font-family: var(--font-press-start-2p);
+}
+
+.r0-login .r0-btn {
+  margin-top: 1em;
+}
+
+.r0-login_group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}

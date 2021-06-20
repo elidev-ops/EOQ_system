@@ -1,0 +1,64 @@
+.nes-border {
+  --color-pixel: transparent;
+  --border-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--border-color);
+  position: relative;
+}
+
+button.nes-border {
+  box-shadow: inset 0 0 0 2px var(--border-color), inset -2px -2px 0 2px var(--color-background-darker-alpha);
+  transition: transform 30ms linear;
+}
+
+button.nes-border:hover {
+  box-shadow: inset 0 0 0 2px var(--border-color), inset -2px -2px 0 3px var(--color-background-darker-alpha);
+}
+
+button.nes-border:active {
+  box-shadow: inset 0 0 0 2px var(--border-color), inset 2px 2px 0 2px var(--color-background-darker-alpha);
+  transform: translate3d(0, 4px, 0);
+}
+
+.nes-border::before,
+.nes-border *:first-child::before,
+.nes-border::after,
+.nes-border *:first-child::after {
+  content: '';
+  width: 2px;
+  height: 2px;
+  display: block;
+  background-color: var(--color-pixel);
+  position: absolute;
+}
+
+.nes-border::before,
+.nes-border::after {
+  left: 0;
+}
+
+.nes-border::before,
+.nes-border *:first-child::before {
+  top: 0;
+}
+
+.nes-border::after,
+.nes-border *:first-child::after {
+  bottom: 0;
+}
+
+.nes-border *:first-child::before,
+.nes-border *:first-child::after {
+  right: 0;
+}
+
+.nes-border-box {
+  --nes-border-box: transparent;
+  --nes-border-box-size: 4px;
+  --nes-border-box-size-minus: -4px;
+
+  box-shadow:
+    0 var(--nes-border-box-size) var(--nes-border-box),
+    0 var(--nes-border-box-size-minus) var(--nes-border-box),
+    var(--nes-border-box-size) 0 var(--nes-border-box),
+    var(--nes-border-box-size-minus) 0 var(--nes-border-box)
+}

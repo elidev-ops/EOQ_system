@@ -1,0 +1,39 @@
+.r0-btn {
+  --border-color: var(--color-background-darker);
+  color: var(--color-text-default);
+  display: block;
+  font-family: var(--font-press-start-2p);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.large {
+  padding: 15px;
+}
+
+.r0-btn:not(:first-of-type) {
+  margin-top: 1em;
+}
+
+.error {
+  --bg-error: var(--color-background-error);
+  background-color: var(--bg-error);
+  color: var(--color-text-white);
+}
+
+.error:hover {
+  --bg-error: var(--color-background-error-highlight);
+}
+
+.primary {
+  --bg-primary: var(--color-background-primary);
+  background-color: var(--bg-primary);
+  color: var(--color-text-white);
+}
+
+.primary:hover {
+  --bg-primary: var(--color-background-primary-highlight);
+}
