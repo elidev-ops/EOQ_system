@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/components/login.css">
   <link rel="stylesheet" href="css/components/logo.css">
   <link rel="stylesheet" href="css/components/message.css">
+  <link rel="stylesheet" href="css/components//select.css">
 </head>
 <body class="r0-center">
   <section class="r0-login-section nes-border-box">
@@ -38,6 +39,18 @@
     <div class="r0-login_input-box nes-border">
       <div>
         <input type="text" name="username" placeholder="Nome de usuário">
+      </div>
+    </div>
+    <div class="r0-login_input-box p0 nes-border">
+      <div>
+        <div class="r0-select">
+          <select name="role">
+            <option value disabled selected hidden>Selecione um categoria</option>
+            <option value="Vendedor">Vendedor</option>
+            <option value="Técnico">Técnico</option>
+            <option value="Desenvolvedor">Desenvolvedor</option>
+          </select>
+        </div>
       </div>
     </div>
     <div class="r0-login_input-box nes-border">
@@ -58,6 +71,7 @@
     </div>
   </form>
   </section>
+  <script src="js/select.js"></script>
   <script src="js/errors.js"></script>
   <script src="js/validations.js"></script>
   <script src="js/sessions.js"></script>

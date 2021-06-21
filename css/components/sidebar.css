@@ -11,10 +11,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   padding: 0.8em 0;
 }
 
 .r0-sidebar_navbar button {
   --color-pixel: var(--color-background-secondary);
+}
+
+.r0-sidebar_navbar button span {
+  pointer-events: none;
 }

@@ -23,17 +23,19 @@
   <link rel="stylesheet" href="css/components/button.css">
   <link rel="stylesheet" href="css/components/login.css">
   <link rel="stylesheet" href="css/components/logo.css">
+  <link rel="stylesheet" href="css/components/input.css">
+  <link rel="stylesheet" href="css/components/loading.css">
 </head>
 <body class="dashboard">
   <div class="r0-sidebar nes-border-box">
     <nav class="r0-sidebar_navbar">
-      <button class="r0-btn icon nes-border">
+      <button data-page='main' class="r0-btn icon nes-border">
         <span class="material-icons">dashboard</span>
       </button>
-      <button class="r0-btn icon nes-border">
+      <button data-page='create' class="r0-btn icon nes-border">
         <span class="material-icons">add</span>
       </button>
-      <button class="r0-btn icon nes-border">
+      <button data-page='list' class="r0-btn icon nes-border">
         <span class="material-icons">search</span>
       </button>
     </nav>
@@ -56,8 +58,40 @@
     </div>
   </header>
   <main class="r0-main"></main>
-  <section class="r0-info"></section>
+  <section class="r0-info nes-border-box">
+    <div class="r0-info_box nes-border-box">
+      <div data-name="Clientes" class="r0-info_box--content">
+        <span data-amount="clients">
+          amount_c
+        </span>
+      </div>
+    </div>
+    <div class="r0-info_box nes-border-box">
+      <div data-name="Produtos" class="r0-info_box--content">
+        <span data-amount="services">
+          amount_s
+        </span>
+      </div>
+    </div>
+    <div class="r0-info_exp">
+      <div class="r0-info_exp--header">
+        <h4>Total: R$_00_00</h4>
+      </div>
+      <div class="r0-info_exp--content">
+        <div class="r0-info_exp--content_data">
+          <span>Valor bruto</span>
+          <span class="plus">R$_00_00</span>
+        </div>
+        <div class="r0-info_exp--content_data">
+          <span>A receber</span>
+          <span class="minus">R$_00_00</span>
+        </div>
+      </div>
+    </div>
+  </section>
   <footer class="r0-footer"></footer>
-  <script src="js/loggedin.js"></script>
+  <!-- <script src="js/loggedin.js"></script> -->
+  <script src="js/pagination.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

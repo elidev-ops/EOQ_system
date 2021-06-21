@@ -1,3 +1,56 @@
 .r0-main {
   grid-area: main;
 }
+
+.r0-main_content {
+  background-color: var(--color-background-lighten);
+  padding: 1em;
+}
+
+.r0-main_content h3 {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+.r0-main_content form {
+  display: none;
+}
+
+.r0-main_content form > button {
+  margin-top: 1em;
+  --color-pixel: var(--color-background-lighten);
+}
+
+.r0-main_content form.active {
+  display: block;
+  animation: fade-in 600ms ease-in-out;
+}
+
+.r0-main_navbar {
+  display: flex;
+}
+
+.r0-main_navbar > button {
+  background-color: var(--color-background-lighten);
+  height: 32px;
+  padding: 10px 15px;
+  font-family: var(--font-press-start-2p);
+  opacity: 0.3;
+}
+
+.r0-main_navbar > button.active {
+  opacity: 1;
+}
+
+.text-primary {
+  color: var(--color-background-secondary)
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

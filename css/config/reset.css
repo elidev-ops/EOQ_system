@@ -13,6 +13,10 @@ body {
     list-style-type: none;
 }
 
+ul, ol {
+    list-style-type: none;
+}
+
 button {
     border: 0;
     cursor: pointer;
