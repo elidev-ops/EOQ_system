@@ -35,7 +35,7 @@
   <section class="r0-login-section nes-border-box">
     <img src="assets/logo.svg" class="r0-logo">
    <h2>Cadastrar Conta</h2>
-    <form data-form="signup" class="r0-login">
+    <form data-form="signup" class="r0-login" autocomplete="off">
     <div class="r0-login_input-box nes-border">
       <div>
         <input type="text" name="name" placeholder="Nome">
@@ -82,6 +82,7 @@
   </form>
   </section>
   <script src="js/eoq-system.js"></script>
+  <script src="js/verify-data-exists.js"></script>
   <script src="js/uuid.js"></script>
   <script src="js/select.js"></script>
   <script src="js/errors.js"></script>
@@ -91,7 +92,7 @@
   <script src="js/validations.js"></script>
   <script src="js/sessions.js"></script>
   <script>
-    changeTitle('Sign Up')
+    title.change('Sign Up')
   </script>
 </body>
 </html>

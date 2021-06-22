@@ -8,28 +8,13 @@ const stateAccounts = (() => {
   }
 })()
 
-formEl.addEventListener('submit', submitHandle)
-
-function accountAlreadyExists (accountData) {
-  let isValid = { result: false }
-  const data = stateAccounts.getExchangeRate()
-  if (data) {
-    for (const account of data) {
-      if (account.username === accountData.username || account.email === accountData.email) {
-        isValid.error = account.username === accountData.username 
-          ? accountData.username : accountData.email
-        isValid.result = true
-      }
-    }
-  }
-  return isValid
-}
+document.addEventListener('submit', submitHandle)
 
 const submitSection = (() => {
   return {
     signup: (data, target) => {
       delete data.passwordConfirmation
-      const exists = accountAlreadyExists(data)
+      const exists = dataAlreadyExists(stateAccounts.getExchangeRate(), data, 'username', 'email')
       if (!exists.result) {
         stateAccounts.setExchangeRate([...stateAccounts.getExchangeRate(), data])
         localStorage.setItem('accounts', JSON.stringify(stateAccounts.getExchangeRate()))

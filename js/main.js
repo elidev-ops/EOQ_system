@@ -1,9 +1,14 @@
-const loggedIn = JSON.parse(localStorage.getItem('loggedin'))
-const clientsData = JSON.parse(localStorage.getItem('clients'))
-const servicesData = JSON.parse(localStorage.getItem('services'))
+function updateCountItens () {
+  const clientsDataCache = cache.get('clients')
+  const clientsData = clientsDataCache ? clientsDataCache.filter(client => client.accountId === logged.id) : []
+  const servicesDataCache = cache.get('services') 
+  const servicesData = servicesDataCache ? servicesDataCache.filter(service => service.accountId === logged.id) : []
 
-const amountClientEl = document.querySelector('[data-amount="clients"]')
-const amountServiceEl = document.querySelector('[data-amount="services"]')
+  const amountClientEl = document.querySelector('[data-amount="clients"]')
+  const amountServiceEl = document.querySelector('[data-amount="services"]')
 
-amountClientEl.innerHTML = clientsData ? clientsData.length : 0
-amountServiceEl.innerHTML = servicesData ? servicesData.length : 0
+  amountClientEl.innerHTML = clientsData ? clientsData.length : 0
+  amountServiceEl.innerHTML = servicesData ? servicesData.length : 0
+}
+
+updateCountItens()

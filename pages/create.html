@@ -3,7 +3,7 @@
   <button data-js="service">Produtos</button>
 </nav>
 <div class="r0-main_content">
-  <form class="active" data-form="client">
+  <form class="active" data-form="client" autocomplete="off">
     <h3><span class="text-primary">#</span> Cadastrar Cliente</h3>
     <div class="r0-input nes-border-box">
       <input type="text" name="name" placeholder="Nome">
@@ -12,19 +12,19 @@
       <input type="email" name="email" placeholder="Email">
     </div>
     <div class="r0-input nes-border-box">
-      <input type="text" name="phoneNumber" placeholder="Numero de telefone">
+      <input type="number" name="phoneNumber" placeholder="Numero de telefone">
     </div>
     <button type="submit" class="r0-btn large primary nes-border">
       <span>Cadastrar</span>
     </button>
   </form>
-  <form data-form="service">
+  <form data-form="service" autocomplete="off">
     <h3><span class="text-primary">#</span> Cadastrar Produto | Serviço</h3>
     <div class="r0-input nes-border-box">
       <input type="text" name="name" placeholder="Nome">
     </div>
     <div class="r0-input nes-border-box">
-      <input type="text" name="amount" placeholder="Valor">
+      <input type="number" name="amount" placeholder="Valor">
     </div>
     <div class="r0-input nes-border-box">
       <input type="text" name="description" placeholder="Descrição">
@@ -32,7 +32,7 @@
     <div class="r0-login_input-box p0 nes-border">
       <div>
         <div class="r0-select">
-          <select name="client">
+          <select data-el="select" name="client">
             <option value disabled selected hidden>Selecione o cliente</option>
           </select>
         </div>

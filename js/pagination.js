@@ -46,6 +46,7 @@ const pageFunctions = (() => {
     main: () => { },
     create: () => {
       navTab()
+      updateSelectClients()
     },
     list: () => {
       navTab()

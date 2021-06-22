@@ -12,7 +12,7 @@
   left: calc(15px * 4);
   position: absolute;
   margin: 0 auto;
-  border-radius: 2px;
+  border-radius: 0;
   transform: translateY(0) rotate(45deg) scale(0);
   animation: animationLoading 2500ms linear infinite;
 }
