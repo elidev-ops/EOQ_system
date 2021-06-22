@@ -1,6 +1,6 @@
-->![Alt text](./assets/logo.svg "EOQ System")<-
+<p align="center">![Alt text](./assets/logo.svg "EOQ System")</p>
 
-# 🚀 EOQ System {align=center}
+<p align="center"># 🚀 EOQ System </p>
 
 - Cadastro de contas administradoras da gestão
 - Cadastro de clientes para controle
@@ -8,4 +8,4 @@
 
 ## Apresentação
 
-![Alt text](presentation.gif "Apresentação do sistema"){align=center}
+![Alt text](presentation.gif "Apresentação do sistema")
