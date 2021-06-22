@@ -1,4 +1,4 @@
-![Alt text](./assets/logo.svg "EOQ System"){align=center}
+->![Alt text](./assets/logo.svg "EOQ System")<-
 
 # 🚀 EOQ System {align=center}
 
