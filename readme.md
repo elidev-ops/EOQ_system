@@ -1,4 +1,4 @@
-![Alt text](./assets/logo.svg "EOQ System") {align=center}
+![Alt text](./assets/logo.svg "EOQ System"){align=center}
 
 # 🚀 EOQ System {align=center}
 
@@ -8,4 +8,4 @@
 
 ## Apresentação
 
-![Alt text](presentation.gif "Apresentação do sistema") {align=center}
+![Alt text](presentation.gif "Apresentação do sistema"){align=center}
