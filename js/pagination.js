@@ -59,12 +59,17 @@ async function handlePage(event) {
     mainEl.prepend(loading())
     const response = await getPage(page)
     mainEl.innerHTML = response
+    pageFunctions[page]()
   }
-  pageFunctions[page]()
 }
 
 sidebarEl.addEventListener('click', handlePage)
 
-document.addEventListener('submit', event => {
-  event.preventDefault()
+handlePage({ 
+  target: { 
+    dataset: { 
+      page: 'main'
+    },
+    tagName: 'BUTTON'
+  }
 })

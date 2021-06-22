@@ -3,8 +3,14 @@
 }
 
 .r0-main_content {
+  --nes-border-box: var(--color-background-darker);
   background-color: var(--color-background-lighten);
   padding: 1em;
+}
+
+.r0-main_content .nes-border  {
+  --color-pixel: var(--color-background-lighten);
+  --border-color: var(--color-background-darker);
 }
 
 .r0-main_content h3 {

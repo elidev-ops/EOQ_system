@@ -8,23 +8,17 @@ const stateAccounts = (() => {
   }
 })()
 
-function createElement (el, attrs) {
-  const element = document.createElement(el)
-  Object.entries(attrs).forEach(([key, value]) => {
-    element.setAttribute(key, value)
-  })
-  return element
-}
-
 formEl.addEventListener('submit', submitHandle)
 
 function accountAlreadyExists (accountData) {
-  let isValid = false
+  let isValid = { result: false }
   const data = stateAccounts.getExchangeRate()
   if (data) {
     for (const account of data) {
-      if (account.username === accountData.username) {
-        isValid = true
+      if (account.username === accountData.username || account.email === accountData.email) {
+        isValid.error = account.username === accountData.username 
+          ? accountData.username : accountData.email
+        isValid.result = true
       }
     }
   }
@@ -36,7 +30,7 @@ const submitSection = (() => {
     signup: (data, target) => {
       delete data.passwordConfirmation
       const exists = accountAlreadyExists(data)
-      if (!exists) {
+      if (!exists.result) {
         stateAccounts.setExchangeRate([...stateAccounts.getExchangeRate(), data])
         localStorage.setItem('accounts', JSON.stringify(stateAccounts.getExchangeRate()))
         insertMessageBoxInDOM({
@@ -48,7 +42,7 @@ const submitSection = (() => {
       }
       insertMessageBoxInDOM({
         target,
-        message: `Username ${data.username} already exists`,
+        message: `The ${exists.error} already exists`,
         error: true
       })
     },
@@ -70,23 +64,8 @@ const submitSection = (() => {
   }
 })()
 
-function uuid () {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
-    .replace(/[xy]/g, function (c) {
-      let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8)
-      return v.toString(16)
-  })
-}
-
-function createDataObject (data) {
-  const Obj = data.target.dataset.form === 'signup' ? { id: uuid() } : {}
-  const inputs = Array.from(data.target).filter(el => el.tagName !== 'BUTTON')
-  inputs.forEach(input => Obj[input.name] = input.value.trim())
-  return Obj
-}
-
 const validationsArr = {
-  signup: ['name', 'username', 'password', 'passwordConfirmation'],
+  signup: ['name', 'username', 'email', 'password', 'passwordConfirmation'],
   login: ['username', 'password']
 }
 
@@ -95,28 +74,14 @@ function validations (data, arrValidation) {
   for (const inputName of arrValidation) {
     validations.push(requiredFieldsValidation(inputName))
   }
+  arrValidation.includes('email')
+    ? validations.push(emailValidation('email'))
+    : null
   arrValidation.includes('passwordConfirmation')
     ? validations.push(compareFieldsValidation('password', 'passwordConfirmation'))
     : null
   return validationComposite(data, validations)
 }
-
-function createBoxMessage (value, error) {
-  const msgBox = createElement('div', {})
-  const text = createElement('span', {})
-  msgBox.className = `r0-message ${error ? 'warning' : 'success'}`
-  text.innerText = value
-  msgBox.appendChild(text)
-  return msgBox
-}
-
-function insertMessageBoxInDOM ({ target, message, error }) {
-  const msgElement = target.querySelector('.r0-message')
-  msgElement ? msgElement.remove() : null 
-  const msg = createBoxMessage(message, error)
-  target.prepend(msg)
-  setTimeout(() => msg.remove(), 3000)
-} 
 
 function submitHandle (event) {
   event.preventDefault()

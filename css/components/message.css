@@ -1,6 +1,7 @@
 .r0-message {
   --box-shadow-color-ness-border: transparent;
   padding: 1em;
+  margin: 1em 0;
   text-align: center;
   font-family: var(--font-press-start-2p);
   font-size: 14px;
